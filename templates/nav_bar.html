@@ -1,0 +1,16 @@
+{%  block content  %}
+{% if request.user.is_authenticated %}
+ 
+    <p>hello {{request.user}}</p>
+    <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/add_task"> Add a new task</a></li> 
+        <li><a href="/history"> Completed tasks</a></li>
+        <li><a href="/logout"> logout </a> </li>
+    </ul>
+    {% endif %}
+
+   
+    
+
+{% endblock %}

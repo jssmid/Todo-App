@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="loginp" style="height: auto">
+
+    <h1>Your Completed tasks</h1>
+
+    <div>
+        {% for task in tasks  %}
+        <div>
+               <p style="color: #04AA6D; text-align: left ;">Done/ <span style="color: aliceblue;">{{task.task}}</span> </p> 
+                {% csrf_token %}
+        </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock content %}

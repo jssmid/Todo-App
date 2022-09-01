@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="loginp" style="height: auto">
+    {% if request.user.is_authenticated %}
+    
+    <h1 style="text-align:center ; color: aliceblue;">Your tasks</h1>
+    {{task.user}}
+    <div >
+        
+        <form method="post" action="">
+        {% for task in tasks  %}
+           {% if request.user == task.user %}
+           {% csrf_token %}
+         <p style="text-align: left;">  <input type="checkbox" value="{{ task.id }}" name="boxes" > {{task.task}} 
+            <button class="btn1" style=" border: 10%; width: 13%; background: #33ccff ;color: white ; " ><a  style="text-decoration: none; color: white;  " href="{% url 'edit_task' task.id %}"> Edit </a></button>
+            <button class="btn1" style=" border: 10% ; width: 10%; background: #33ccff ;color: white ; " ><a style="text-decoration: none; color: white; " href="{% url 'delete_task' task.id %}"> X </a></button> </p> 
+            <hr>
+        
+           {% endif %}
+        {% endfor %}
+
+
+
+
+        {% if tasks|length_is:'0' %}
+            <h1 style="text-align:center;" > <a style="color: #04AA6D ;" href="{% url 'add_task' %}">Add some tasks</a> </h1>
+        {% else %}
+            <input style=" display:block; margin: auto ;width: 25%; background: #33ccff ;color: white ; "  type="submit" value="Done" name="add">
+        {% endif %}
+        
+        </form>
+        
+
+    </div>
+    {% else %}
+    <div class="loginp">
+        <p style="text-align:center; padding: 30px;">If you already have an account you can login <a style="color: grey;" href="{% url 'login' %}">here</a> </p> 
+        <p style="text-align:center;">If you do not have an account you can create an account <a style="color: grey;" href="{% url 'create_user' %}">here</a></p>
+    </div>
+    {% endif %}
+</div>
+
+
+
+{% endblock content %}
