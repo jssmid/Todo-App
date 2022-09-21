@@ -1,3 +1,1 @@
-secret_key.txt
-my2_env/
-db.sqlite3
+.env
