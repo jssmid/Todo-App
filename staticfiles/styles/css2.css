@@ -1,0 +1,52 @@
+body{
+    background-color: #ffd55a ;
+    color: #04AA6D;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+} 
+.loginp{
+    background-color: rgb(9, 21, 65) ;
+    width: 400px;
+    margin:0 auto;
+    border: 0px solid;
+    border-radius: 10px;
+    max-height: auto;
+    min-height: 350px ;
+}
+
+.btn1{
+  float: right !important;
+}
+
+ul{
+    height:42px ; 
+    list-style-type: none;
+    margin: -8px;
+    padding: 4px;
+    overflow: hidden;
+    background-color:  rgb(9, 21, 65);
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+li{
+    float: left;
+    border-right: 1px solid #bbb;
+  }
+  
+li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+li a:hover {
+    background-color: #022268 ;
+    
+  }
+  
+.active {
+    background-color: #4CAF50;
+  }
